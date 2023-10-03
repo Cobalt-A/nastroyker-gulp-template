@@ -1,0 +1,25 @@
+{
+	"name": "start-up-gulp-template",
+	"version": "0.1.0",
+	"description": "start up gulp template",
+	"type": "module",
+	"author": "Nikita Shkutyak",
+	"browserslist": [
+		"last 3 versions"
+	],
+	"license": "ISC",
+	"scripts": {
+		"start": "gulp"
+	},
+	"devDependencies": {
+		"browser-sync": "^2.29.3",
+		"gulp": "^4.0.2",
+		"gulp-changed": "^4.0.3",
+		"gulp-concat": "^2.6.1",
+		"gulp-imagemin": "^8.0.0",
+		"gulp-postcss": "^9.0.1",
+		"gulp-sass": "^5.1.0",
+		"postcss": "^8.4.23",
+		"sass": "^1.62.1"
+	}
+}
