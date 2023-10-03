@@ -29,7 +29,7 @@ function scripts() {
 }
 
 function styles() {
-  return src([`src/styles/*.*`, `!src/styles/sass/_*.*`])
+  return src([`src/styles/index.*`])
   .pipe(sass({ "include css": true }))
   .pipe(postcss([]))
   .pipe(concat("styles.css"))
