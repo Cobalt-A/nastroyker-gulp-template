@@ -17,7 +17,6 @@ function sync() {
     ghostMode: { clicks: false },
     notify: false,
     online: true,
-    // tunnel: 'yousutename', // Attempt to use the URL https://yousutename.loca.lt
   });
 }
 
@@ -46,8 +45,9 @@ function images() {
 }
 
 function startWatch() {
-  watch(`src/styles/**/*`, { usePolling: true }, styles);
-  watch(["src/scripts/**/*.js"], { usePolling: true }, scripts);
+  // т.к. browserSync.stream обновляет только первое найденное подключение стилей лучше использовать browserSync.reload
+  watch(`src/styles/**/*`, { usePolling: true }, styles).on("change", browserSync.reload);
+  watch(["src/scripts/**/*.js"], { usePolling: true }, scripts).on("change", browserSync.reload);
   watch("src/images/**/*", { usePolling: true }, images);
   watch(`public/**/*`, { usePolling: true }).on("change", browserSync.reload);
 }
