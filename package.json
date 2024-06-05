@@ -4,6 +4,10 @@
 	"description": "start up gulp template",
 	"type": "module",
 	"author": "Nikita Shkutyak",
+	"engines": {
+    "node": "20.x",
+		"npm": "10.x"
+  },
 	"browserslist": [
 		"last 3 versions"
 	],

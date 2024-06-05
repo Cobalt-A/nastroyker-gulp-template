@@ -1,9 +1,9 @@
 import pkg from "gulp";
 import browserSync from "browser-sync";
 import gulpSass from "gulp-sass";
-import dartSass from "sass";
 import postcss from "gulp-postcss";
 import concat from "gulp-concat";
+import * as dartSass from 'sass'
 const sass = gulpSass(dartSass);
 const { src, dest, parallel, series, watch } = pkg;
 
