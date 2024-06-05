@@ -10,5 +10,5 @@
 ### `npm start`
 
 ## Папки проекта
-`src` - для всего исходного кода js и sass/scss, картинки в `src/images` попадают в `public/images` в сжатом виде \
+`src` - для всего исходного js и sass/scss кода, потом исходный sass/sccc конпилиться в css в /public/css/styles.css, js в /public/js/scripts.css
 `public` - папка со всеми файлами итоговой верстки
