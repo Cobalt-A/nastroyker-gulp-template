@@ -3,8 +3,6 @@ import browserSync from "browser-sync";
 import gulpSass from "gulp-sass";
 import dartSass from "sass";
 import postcss from "gulp-postcss";
-import imagemin from "gulp-imagemin";
-import changed from "gulp-changed";
 import concat from "gulp-concat";
 const sass = gulpSass(dartSass);
 const { src, dest, parallel, series, watch } = pkg;
@@ -36,22 +34,13 @@ function styles() {
   .pipe(browserSync.stream());
 }
 
-function images() {
-  return src(["src/images/**/*"])
-  .pipe(changed("public/images/"))
-  .pipe(imagemin())
-  .pipe(dest("public/images/"))
-  .pipe(browserSync.stream());
-}
-
 function startWatch() {
   // т.к. browserSync.stream обновляет только первое найденное подключение стилей лучше использовать browserSync.reload
   watch(`src/styles/**/*`, { usePolling: true }, styles).on("change", browserSync.reload);
   watch(["src/scripts/**/*.js"], { usePolling: true }, scripts).on("change", browserSync.reload);
-  watch("src/images/**/*", { usePolling: true }, images);
   watch(`public/**/*`, { usePolling: true }).on("change", browserSync.reload);
 }
 
-export { scripts, styles, images };
+export { scripts, styles };
 
-export default series(scripts, styles, images, parallel(sync, startWatch));
+export default series(scripts, styles, parallel(sync, startWatch));
