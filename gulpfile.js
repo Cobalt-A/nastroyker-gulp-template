@@ -35,7 +35,7 @@ function styles() {
 }
 
 function startWatch() {
-  // т.к. browserSync.stream обновляет только первое найденное подключение стилей лучше использовать browserSync.reload
+  // т.к. browserSync.stream обновляет только первое найденное подключение стилей (а тут их больше одного, учитывая стили К1) лучше использовать browserSync.reload
   watch(`src/styles/**/*`, { usePolling: true }, styles).on("change", browserSync.reload);
   watch(["src/scripts/**/*.js"], { usePolling: true }, scripts).on("change", browserSync.reload);
   watch(`public/**/*`, { usePolling: true }).on("change", browserSync.reload);
