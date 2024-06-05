@@ -15,6 +15,7 @@ function sync() {
     ghostMode: { clicks: false },
     notify: false,
     online: true,
+    open: false
   });
 }
 
